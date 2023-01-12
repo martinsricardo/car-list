@@ -157,7 +157,7 @@ int main()
         fwrite(&alunos[i],sizeof(struct aluno),1,fh);
 
     }*/
-numAlunos=0;
+    numAlunos=0;
     while( fread(&alunos[numAlunos],sizeof(struct aluno),1,fh) )
     {
      printf("Aluno: %s %s\n", alunos[numAlunos].nome, alunos[numAlunos].apelido);
