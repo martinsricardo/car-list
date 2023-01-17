@@ -170,8 +170,7 @@ void exportar()
     while (fread(&car[numCarros], sizeof(struct Cars), 1, fh1))
     {
         if (car[numCarros].autonomia > autonomiaMinima && car[numCarros].autonomia < autonomiaMaxima)
-        {
-            
+        {        
             fprintf(fh,"%s,%s,%.2f,%d,%d,%.2f,%d,%c \n",car[numCarros].marca,car[numCarros].modelo,car[numCarros].preco,car[numCarros].autonomia,car[numCarros].velmax,car[numCarros].aceleracao,car[numCarros].cv,car[numCarros].tracao);
             numCarros++;
         }
@@ -186,7 +185,7 @@ int main()
 {
     int opcao = 0;
     char continuar[1];
-    
+
     do
     {
         do
