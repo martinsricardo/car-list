@@ -186,8 +186,7 @@ int main()
 {
     int opcao = 0;
     char continuar[1];
-
-    // struct Cars car[255];
+    
     do
     {
         do
