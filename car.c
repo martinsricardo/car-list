@@ -23,7 +23,7 @@ void menu()
     puts("Opção 4 - Exportar");
 }
 
-void listarTodasMarcas() // feito
+void listarTodasMarcas() 
 {
     int numCarros = 0;
     struct Cars car[255];
@@ -45,7 +45,7 @@ void listarTodasMarcas() // feito
     fclose(fh);
 }
 
-void listarDadosModelos() // feito
+void listarDadosModelos() 
 {
     struct Cars car[255];
     char marca[20];
@@ -88,17 +88,23 @@ void listarIntervaloPreco()
     struct Cars car[255];
     int numCarros = 0;
     float precoMinimo, precoMaximo;
-    printf("Introduza um preco minimo: ");
-    scanf("%f", &precoMinimo);
-    while (precoMinimo < 0)
-    {
-        printf("Preço inválido\n");
+ 
+    
+   do {  
         printf("Introduza um preco minimo: ");
         scanf("%f", &precoMinimo);
-    }
+        if(precoMinimo < 0){
+        printf("Preço inválido\n");
+        }
+    }while (precoMinimo < 0);
 
+    do {  
     printf("Introduza um preco maximo: ");
     scanf("%f", &precoMaximo);
+       if(precoMaximo< 0){
+        printf("Preço inválido\n");
+        }
+    }while (precoMaximo < 0);
 
     FILE *fh;
     fh = fopen("data.db", "r");
@@ -110,7 +116,6 @@ void listarIntervaloPreco()
 
     while (fread(&car[numCarros], sizeof(struct Cars), 1, fh))
     {
-
         if (car[numCarros].preco > precoMinimo && car[numCarros].preco < precoMaximo)
         {
             puts("------------------------------------------------------");
@@ -128,16 +133,21 @@ void exportar()
     struct Cars car[255];
     int numCarros = 0;
     int autonomiaMinima, autonomiaMaxima;
+    do{
         printf("Introduza a autonomia minima: ");
         scanf("%d", &autonomiaMinima);
-    while (autonomiaMinima < 0){
-        printf("Autonomia inválida\n");
-        printf("Introduza a autonomia minima: ");
-        scanf("%d", &autonomiaMinima);
-    };
+        if(autonomiaMinima <0){
+            printf("Autonomia inválida\n");
+        }
+    }while (autonomiaMinima <0);
 
+    do{
     printf("Introduza a autonomia maxima:");
     scanf("%d", &autonomiaMaxima);
+     if(autonomiaMaxima <0){
+            printf("Autonomia inválida\n");
+        }
+    }while (autonomiaMaxima< 0);
 
     FILE *fh1;
     fh1 = fopen("data.db", "r");
@@ -156,22 +166,20 @@ void exportar()
         exit(1);
     }
 
-
+    fputs("marca,modelo,preco,autonomia,velmax,aceleracao,cv,tracao\n",fh);
     while (fread(&car[numCarros], sizeof(struct Cars), 1, fh1))
     {
-
         if (car[numCarros].autonomia > autonomiaMinima && car[numCarros].autonomia < autonomiaMaxima)
         {
-            fputs("------------------\n",fh);
-           fprintf(fh,"Autonomia: %d\n",car[numCarros].autonomia);
             
+            fprintf(fh,"%s,%s,%.2f,%d,%d,%.2f,%d,%c \n",car[numCarros].marca,car[numCarros].modelo,car[numCarros].preco,car[numCarros].autonomia,car[numCarros].velmax,car[numCarros].aceleracao,car[numCarros].cv,car[numCarros].tracao);
             numCarros++;
         }
 
     }
     printf("Foram escritos %d carros no intervalo de autonomia indicada (%dKm - %dKm)\n",numCarros, autonomiaMinima,autonomiaMaxima);
-fclose(fh);
-fclose(fh1);
+    fclose(fh);
+    fclose(fh1);
 }
 
 int main()
@@ -204,6 +212,7 @@ int main()
             case 4:
                 opcao = 4;
                 exportar();
+                break;
             default:
                 printf("Opcao invalida\n");
             }
@@ -212,4 +221,6 @@ int main()
         printf("Escolher outra opcao ? s ou n :");
         scanf(" %c", continuar);
     } while (continuar[0] == 's');
+
+    return (0);
 }

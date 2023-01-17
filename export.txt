@@ -1,4 +1,79 @@
-------------------Autonomia: 190
-------------------Autonomia: 188
-------------------Autonomia: 154
-------------------Autonomia: 153
+marca,modelo,preco,autonomia,velmax,aceleracao,cv,tracao
+Audi,e-tron 50 quattro,74336.00,300,190,7.00,313,I 
+Audi,e-tron 55 quattro,87488.00,411,200,6.60,355,I 
+Audi,e-tron GT,108521.00,488,245,4.10,476,I 
+Audi,e-tron S quattro,99736.00,364,210,4.50,503,I 
+Audi,e-tron S Sportback quattro,102600.00,368,210,4.50,503,I 
+Audi,e-tron Sportback 50 quattro,75388.00,347,190,6.80,313,I 
+Audi,e-tron Sportback 55 quattro,90157.00,446,200,5.70,408,I 
+Audi,Q4 e-tron 35,49949.00,341,160,9.00,170,T 
+Audi,Q4 e-tron 45 quattro,60773.00,440,180,6.90,265,I 
+Audi,Q4 e-tron 50 quattro,64173.00,488,180,6.20,299,I 
+Audi,Q4 Sportback e-tron 35,46765.00,349,160,9.00,170,T 
+Audi,Q4 Sportback e-tron 40,59473.00,485,160,8.50,204,T 
+Audi,Q4 Sportback e-tron 50 quattro,65473.00,488,180,6.20,299,I 
+Audi,RS e-tron GT,148629.00,472,250,3.30,646,I 
+BMW,iX xDrive40,89150.00,425,200,6.10,326,I 
+BMW,iX3,76200.00,458,180,6.80,286,T 
+Citroen,e-Berlingo Eletrico,32591.00,285,135,11.70,136,D 
+Citroen,e-C4,37997.00,350,150,9.70,136,D 
+Citroen,e-Spacetourer,47444.00,220,130,0.00,136,D 
+Cupra,Born,42438.00,424,160,7.30,204,T 
+Dacia,Spring Electric,19600.00,230,125,19.10,45,D 
+DS,3 Crossback E-Tense,43100.00,320,150,8.70,136,D 
+Fiat,500 La Prima,30450.00,320,150,9.00,95,D 
+Fiat,500e,30300.00,320,150,9.00,114,D 
+Fiat,500e 3+1 Eletrico,32300.00,320,150,9.00,118,D 
+Fiat,500e Eletrico,24800.00,190,135,9.50,95,D 
+Ford,Mustang Mach-E Base 76 kW,66922.00,440,184,6.10,269,T 
+Ford,Mustang Mach-E Premium 76 kW,73209.00,400,180,5.60,269,I 
+Honda,e Advance,43000.00,313,150,8.00,154,T 
+Hyundai,Ioniq 5,50150.00,488,185,7.40,218,T 
+Hyundai,KAUAI Electric,38055.00,484,167,7.90,204,D 
+Jaguar,i-Pace,83038.00,415,200,4.80,400,I 
+Kia,e-Niro,41700.00,455,167,7.80,204,D 
+Kia,e-Soul,43150.00,452,167,7.90,204,D 
+Kia,EV6 GT-Line,61050.00,490,185,5.40,325,I 
+Lexus,UX 300e,52500.00,290,150,8.00,204,D 
+Lotus,Evija,2000000.00,400,320,3.00,2000,I 
+Mazda,MX-30,37185.00,200,150,9.70,143,D 
+Mercedes-Benz,EQA 250,57500.00,426,160,8.90,190,D 
+Mercedes-Benz,EQA 350 4MATIC,63950.00,429,160,6.00,292,I 
+Mercedes-Benz,EQB 350 4MATIC,65500.00,419,160,6.50,292,I 
+Mercedes-Benz,EQC 400 4Matic,74450.00,417,180,5.10,408,I 
+Mercedes-Benz,EQV 300,77314.00,349,160,10.00,204,D 
+MG,ZS,33800.00,320,175,8.60,156,D 
+MG,5,35600.00,400,180,8.30,184,D 
+Mini,Electric Cooper SE,37350.00,232,150,7.30,184,D 
+Nissan,LEAF,33900.00,270,144,7.90,150,D 
+Nissan,LEAF e,36000.00,385,157,7.30,217,D 
+Opel,Combo Tourer Eletrico,37250.00,286,135,11.70,136,D 
+Opel,Corsa e,32075.00,330,150,8.10,136,D 
+Opel,Mokka e,37130.00,330,150,8.10,136,D 
+Opel,Zafira e Life,51755.00,230,130,10.00,136,D 
+Peugeot,e 2008,35570.00,310,150,8.50,136,D 
+Peugeot,e 208,31370.00,340,150,8.10,136,D 
+Peugeot,e Rifter,36632.00,286,135,11.70,136,D 
+Porsche,Taycan,92529.00,431,230,5.40,408,T 
+Porsche,Taycan 4 Cross Turismo,102984.00,456,220,5.10,476,I 
+Porsche,Taycan 4S,113642.00,407,250,4.00,530,I 
+Porsche,Taycan 4S Cross Turismo,119177.00,452,240,4.10,571,I 
+Porsche,Taycan Turbo,162938.00,450,260,3.20,680,I 
+Porsche,Taycan Turbo Cross Turismo,164414.00,452,250,3.30,680,I 
+Porsche,Taycan Turbo S,197378.00,416,260,2.80,761,I 
+Porsche,Taycan Turbo S Cross Turismo,198854.00,419,250,2.90,761,I 
+Renault,Megane E TECH,35850.00,470,160,7.40,220,D 
+Renault,Twingo Z.E.,25820.00,188,135,12.90,80,D 
+Renault,ZOE R110,33550.00,313,135,11.40,109,D 
+Renault,ZOE R135,36950.00,385,140,9.50,136,D 
+Skoda,Enyaq iV,46219.00,362,160,11.30,148,T 
+Skoda,Enyaq iV 80 X,55000.00,496,160,6.90,265,I 
+Smart,EQ fortwo,22845.00,154,130,11.60,82,D 
+Smart,EQ fortwo cabrio,26395.00,153,130,11.50,82,D 
+Tesla,Model 3,54990.00,491,225,6.10,238,T 
+Toyota,bZ4X,51090.00,375,160,7.50,204,D 
+Volkswagen,ID.3 Pro Eletrico,44832.00,425,160,7.30,204,D 
+Volkswagen,ID.4 GTX,58857.00,482,180,6.20,299,I 
+Volvo,C40 Recharge,51483.00,418,180,4.90,408,I 
+Volvo,XC40 Recharge Eletrico,49535.00,421,180,7.40,231,D 
+Volvo,XC40 Recharge Twin,55675.00,416,180,4.90,408,I 
