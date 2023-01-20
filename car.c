@@ -1,3 +1,9 @@
+/*
+Numero: 2022116161
+Nome: Ricardo Martins
+Curso: EI
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -14,6 +20,8 @@ struct Cars
     int cv;
     char tracao;
 };
+struct Cars car;
+
 
 void menu()
 {
@@ -23,10 +31,11 @@ void menu()
     puts("Opção 4 - Exportar");
 }
 
+
 void listarTodasMarcas() 
 {
     int numCarros = 0;
-    struct Cars car[255];
+    
 
     FILE *fh;
     fh = fopen("data.db", "r");
@@ -36,18 +45,19 @@ void listarTodasMarcas()
         exit(1);
     }
 
-    while (fread(&car[numCarros], sizeof(struct Cars), 1, fh))
+    while (fread(&car, sizeof(struct Cars), 1, fh))
     {
-        printf("%s \n", car[numCarros].marca);
+        printf("%s \n", car.marca);
         numCarros++;
     }
+    puts("---------------------------------");
     printf("Existem %d marcas no carro \n", numCarros);
     fclose(fh);
 }
 
 void listarDadosModelos() 
 {
-    struct Cars car[255];
+    
     char marca[20];
     int numCarros = 0;
     printf("Qual é a marca: ");
@@ -61,34 +71,32 @@ void listarDadosModelos()
         exit(1);
     }
 
-    while (fread(&car[numCarros], sizeof(struct Cars), 1, fh))
+    while (fread(&car, sizeof(struct Cars), 1, fh))
     {
-
-        int value = strcasecmp(car[numCarros].marca, marca);
+        int value = strcasecmp(car.marca, marca);
         if (value == 0)
         {
             puts("------------------------------------------------------");
-            printf("%s - %s \n", car[numCarros].marca, car[numCarros].modelo);
-            printf("Preco: %.2f Eur \n", car[numCarros].preco);
-            printf("Autonomia: %d Km \n", car[numCarros].autonomia);
-            printf("Velocidade maxima: %d km/h \n", car[numCarros].velmax);
-            printf("Aceleracao: %.2f s \n", car[numCarros].aceleracao);
-            printf("CV: %d cv \n", car[numCarros].cv);
-            printf("Tracao: %c Integral \n", car[numCarros].tracao);
+            printf("%s - %s \n", car.marca, car.modelo);
+            printf("Preco: %.2f Eur \n", car.preco);
+            printf("Autonomia: %d Km \n", car.autonomia);
+            printf("Velocidade maxima: %d km/h \n", car.velmax);
+            printf("Aceleracao: %.2f s \n", car.aceleracao);
+            printf("CV: %d cv \n", car.cv);
+            printf("Tracao: %c Integral \n", car.tracao);
             numCarros++;
         }
     }
-    printf("Foram encontrado %d carros \n", numCarros);
+    puts("---------------------------------");
+    printf("Foram encontrados %d carros \n", numCarros);
 
     fclose(fh);
 }
 
 void listarIntervaloPreco()
 {
-    struct Cars car[255];
     int numCarros = 0;
     float precoMinimo, precoMaximo;
- 
     
    do {  
         printf("Introduza um preco minimo: ");
@@ -114,15 +122,16 @@ void listarIntervaloPreco()
         exit(1);
     }
 
-    while (fread(&car[numCarros], sizeof(struct Cars), 1, fh))
+    while (fread(&car, sizeof(struct Cars), 1, fh))
     {
-        if (car[numCarros].preco > precoMinimo && car[numCarros].preco < precoMaximo)
+        if (car.preco > precoMinimo && car.preco < precoMaximo)
         {
             puts("------------------------------------------------------");
-            printf("%s - %s : %.2f \n", car[numCarros].marca, car[numCarros].modelo, car[numCarros].preco);
+            printf("%s - %s : %.2f \n", car.marca, car.modelo, car.preco);
             numCarros++;
         }
     }
+    puts("---------------------------------");
     printf("Foram encontrados %d no intervalo de preco indicado (%.2fEur - %.2fEur)\n", numCarros, precoMinimo, precoMaximo);
 
     fclose(fh);
@@ -130,7 +139,7 @@ void listarIntervaloPreco()
 
 void exportar()
 {
-    struct Cars car[255];
+   
     int numCarros = 0;
     int autonomiaMinima, autonomiaMaxima;
     do{
@@ -149,7 +158,7 @@ void exportar()
         }
     }while (autonomiaMaxima< 0);
 
-    FILE *fh1;
+    FILE *fh1, *fh;
     fh1 = fopen("data.db", "r");
     if (fh1 == NULL)
     {
@@ -157,8 +166,6 @@ void exportar()
         exit(1);
     }
 
-
-    FILE *fh;
     fh = fopen("export.txt", "w");
     if (fh == NULL)
     {
@@ -167,15 +174,16 @@ void exportar()
     }
 
     fputs("marca,modelo,preco,autonomia,velmax,aceleracao,cv,tracao\n",fh);
-    while (fread(&car[numCarros], sizeof(struct Cars), 1, fh1))
+    while (fread(&car, sizeof(struct Cars), 1, fh1))
     {
-        if (car[numCarros].autonomia > autonomiaMinima && car[numCarros].autonomia < autonomiaMaxima)
+        if (car.autonomia > autonomiaMinima && car.autonomia < autonomiaMaxima)
         {        
-            fprintf(fh,"%s,%s,%.2f,%d,%d,%.2f,%d,%c \n",car[numCarros].marca,car[numCarros].modelo,car[numCarros].preco,car[numCarros].autonomia,car[numCarros].velmax,car[numCarros].aceleracao,car[numCarros].cv,car[numCarros].tracao);
+            fprintf(fh,"%s,%s,%.2f,%d,%d,%.2f,%d,%c \n",car.marca,car.modelo,car.preco,car.autonomia,car.velmax,car.aceleracao,car.cv,car.tracao);
             numCarros++;
         }
 
     }
+    puts("---------------------------------");
     printf("Foram escritos %d carros no intervalo de autonomia indicada (%dKm - %dKm)\n",numCarros, autonomiaMinima,autonomiaMaxima);
     fclose(fh);
     fclose(fh1);

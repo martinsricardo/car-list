@@ -1,5 +1,0 @@
-marca,modelo,preco,autonomia,velmax,aceleracao,cv,tracao
-Fiat,500e Eletrico,24800.00,190,135,9.50,95,D 
-Renault,Twingo Z.E.,25820.00,188,135,12.90,80,D 
-Smart,EQ fortwo,22845.00,154,130,11.60,82,D 
-Smart,EQ fortwo cabrio,26395.00,153,130,11.50,82,D 
